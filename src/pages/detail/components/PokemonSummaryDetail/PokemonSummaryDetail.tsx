@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import SvgIcon from "../../../../components/SvgIconButton/SvgIcon";
+import SvgIcon from "../../../../components/SvgIcon/SvgIcon";
 import { toStartCase } from "../../../../utils";
 import { PokemonImageLarge } from "../PokemonImageLarge";
 import { Pokemon } from "../../../api";

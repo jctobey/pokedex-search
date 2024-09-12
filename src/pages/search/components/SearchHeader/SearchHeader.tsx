@@ -1,4 +1,4 @@
-import SvgIcon from "../../../../components/SvgIconButton/SvgIcon";
+import SvgIcon from "../../../../components/SvgIcon/SvgIcon";
 
 export const SearchHeader = () => {
   return (
