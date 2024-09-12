@@ -11,7 +11,7 @@ import { Detail } from "./pages/detail";
 
 const router = createBrowserRouter([
   {
-    path: "/pokemon-search",
+    path: "/pokedex-search",
     element: <Search />,
     errorElement: <ErrorPage />,
   },
