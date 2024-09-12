@@ -1,5 +1,6 @@
 {
   "name": "pokedex-search",
+  "homepage": "https://jctobey.github.io/pokedex-search/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -27,7 +28,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "tailwind:watch": "postcss src/index.css -o src/tailwind-output.css --watch",
-    "tailwind:build": "postcss src/index.css -o src/tailwind-output.css"
+    "tailwind:build": "postcss src/index.css -o src/tailwind-output.css",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build --repo https://github.com/jctobey/pokedex-search.git"
   },
   "eslintConfig": {
     "extends": [
