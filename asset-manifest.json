@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7e5e9753.css",
+    "main.js": "/static/js/main.ee2964b5.js",
+    "static/js/453.98f32350.chunk.js": "/static/js/453.98f32350.chunk.js",
+    "static/media/weight.svg": "/static/media/weight.ab14bce54f5352024a3e33cccdc4ef43.svg",
+    "index.html": "/index.html",
+    "static/media/search.svg": "/static/media/search.5f64514bbb8007d5b65eff9942cc8e50.svg",
+    "static/media/pokeball.svg": "/static/media/pokeball.5c10fb47e967439ed57b3c13ca5716f7.svg",
+    "static/media/close.svg": "/static/media/close.989c834ea512aca143f07f7774cfb6f3.svg",
+    "static/media/arrow_back.svg": "/static/media/arrow_back.f3511728169cc2e220b49980ab76a16c.svg",
+    "static/media/chevron_right.svg": "/static/media/chevron_right.a7316920c08849a54414fee3e58c68d1.svg",
+    "static/media/chevron_left.svg": "/static/media/chevron_left.f8ec3bbfa389c2e60b963c4fbfc066f1.svg",
+    "static/media/straighten.svg": "/static/media/straighten.64ad6586f768d70dd0f28721406a635d.svg",
+    "main.7e5e9753.css.map": "/static/css/main.7e5e9753.css.map",
+    "main.ee2964b5.js.map": "/static/js/main.ee2964b5.js.map",
+    "453.98f32350.chunk.js.map": "/static/js/453.98f32350.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e5e9753.css",
+    "static/js/main.ee2964b5.js"
+  ]
+}
