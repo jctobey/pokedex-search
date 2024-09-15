@@ -1,7 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import { Search } from "./pages/search";
 import { ErrorPage } from "./pages/ErrorPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -11,12 +15,17 @@ import { Detail } from "./pages/detail";
 
 const router = createBrowserRouter([
   {
+    path: "/",
+    element: <Navigate to="/pokedex-search" replace={true} />,
+    errorElement: <ErrorPage />,
+  },
+  {
     path: "/pokedex-search",
     element: <Search />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "pokedex/:pokemonId",
+    path: "pokedex-search/:pokemonId",
     element: <Detail />,
     errorElement: <ErrorPage />,
   },
