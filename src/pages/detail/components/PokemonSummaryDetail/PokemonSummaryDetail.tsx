@@ -8,8 +8,8 @@ export const PokemonSummaryDetail = ({ pokemon }: { pokemon: Pokemon }) => {
   const { pokemonId } = useParams<{ pokemonId: string }>();
   const paddedPokemonId = pokemonId?.padStart(3, "0");
   return (
-    <div className="h-2/5 w-full pt-4 px-4 relative">
-      <div className="w-full flex items-center justify-between text-white pb-14">
+    <div className="h-[35%] w-full pt-4 px-4 relative">
+      <div className="w-full flex items-center justify-between text-white pb-8">
         <div className="w-full flex items-center gap-2">
           <Link to="/">
             <SvgIcon name="ArrowBack" color="white" width={32} height={32} />

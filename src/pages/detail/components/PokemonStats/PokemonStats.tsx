@@ -68,7 +68,7 @@ export const PokemonStats = () => {
     ? Math.floor(Math.random() * englishFlavorTextEntries.length)
     : 0;
   return (
-    <div className="bg-white rounded-lg w-full overflow-scroll h-3/5 pt-12 px-4 shadow-inner shadow-gray-300 md:h-full">
+    <div className="bg-white rounded-lg w-full h-[65%] pt-12 px-4 shadow-inner shadow-gray-300 overflow-scroll md:h-full">
       <div className="flex justify-center gap-4 w-full">
         {pokemon?.types.map(({ type }) => (
           <PokeTypePill pokemonType={type.name}>
@@ -115,7 +115,7 @@ export const PokemonStats = () => {
       <p className="pt-6 pb-2 text-xs font-light">
         {englishFlavorTextEntries[randomEnglishFlavorText]?.flavor_text}
       </p>
-      <div className="flex text-center p-2 pt-3">
+      <div className="flex text-center p-2 py-3">
         <h4
           className={classNames("text-lg font-semibold w-full", textColorClass)}
         >

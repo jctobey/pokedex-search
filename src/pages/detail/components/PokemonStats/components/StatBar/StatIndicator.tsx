@@ -18,19 +18,23 @@ export const StatIndicator = ({
     <div className="flex w-full gap-2 items-center">
       <span
         className={classNames(
-          "px-2 border-r border-r-grayscale-light text-right",
+          "px-2 border-r-2 border-r-grayscale-light text-right w-14 font-semibold text-xs",
           textColorClass
         )}
       >
         {stat}
       </span>
-      <span>{paddedStatValue}</span>
+      <span className="text-xs w-6">{paddedStatValue}</span>
       <div className="grow">
-        <progress
-          max={STAT_BAR_MAX}
-          value={statValue}
-          className={classNames("w-full h-1", bgColorClass)}
-        />
+        <div className="relative w-full h-1 bg-gray-200 rounded overflow-hidden">
+          <div
+            className={classNames(
+              "absolute top-0 left-0 h-full rounded",
+              bgColorClass
+            )}
+            style={{ width: `${(statValue / STAT_BAR_MAX) * 100}%` }}
+          />
+        </div>
       </div>
     </div>
   );
