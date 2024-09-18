@@ -1,4 +1,4 @@
-import { classNames, getBgColorClass } from "../../../../../../utils";
+import { classNames } from "../../../../../../utils";
 
 const STAT_BAR_MAX = 200;
 

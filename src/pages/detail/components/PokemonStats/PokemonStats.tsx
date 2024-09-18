@@ -11,7 +11,6 @@ import {
 } from "../../../../utils";
 import { ErrorPage } from "../../../ErrorPage";
 import SvgIcon from "../../../../components/SvgIcon/SvgIcon";
-import { text } from "stream/consumers";
 import { toTitleCase } from "../../../../utils/toTitleCase";
 import { StatIndicator } from "./components/StatBar";
 
@@ -69,7 +68,7 @@ export const PokemonStats = () => {
     ? Math.floor(Math.random() * englishFlavorTextEntries.length)
     : 0;
   return (
-    <div className="bg-white rounded-lg w-full overflow-scroll h-3/5 pt-12 px-4 shadow-inner shadow-gray-300">
+    <div className="bg-white rounded-lg w-full overflow-scroll h-3/5 pt-12 px-4 shadow-inner shadow-gray-300 md:h-full">
       <div className="flex justify-center gap-4 w-full">
         {pokemon?.types.map(({ type }) => (
           <PokeTypePill pokemonType={type.name}>

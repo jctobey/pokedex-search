@@ -14,12 +14,12 @@ export const PokemonSummaryDetail = ({ pokemon }: { pokemon: Pokemon }) => {
           <Link to="/">
             <SvgIcon name="ArrowBack" color="white" width={32} height={32} />
           </Link>
-          <h3 className="text-3xl font-semibold">
+          <h1 className="text-2xl font-semibold">
             {toStartCase(pokemon.name)}
-          </h3>
+          </h1>
         </div>
         <div>
-          <span className="font-semibold">{`#${paddedPokemonId}`}</span>
+          <span className="font-semibold text-xs">{`#${paddedPokemonId}`}</span>
         </div>
       </div>
       <SvgIcon
@@ -31,6 +31,7 @@ export const PokemonSummaryDetail = ({ pokemon }: { pokemon: Pokemon }) => {
       />
       <PokemonImageLarge
         spriteImageUrl={pokemon.sprites.other.dream_world.front_default}
+        pokemonName={pokemon.name}
       />
     </div>
   );

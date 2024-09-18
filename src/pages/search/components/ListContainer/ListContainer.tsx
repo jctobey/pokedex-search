@@ -60,6 +60,7 @@ export const ListContainer = () => {
                 spriteImageUrl={
                   pokemonQueryData.data.sprites.other.dream_world.front_default
                 }
+                pokemonName={pokemonQueryData.data.name}
               />
               <PokemonName pokemonName={pokemonQueryData.data?.name || ""} />
             </PokemonCardLink>
