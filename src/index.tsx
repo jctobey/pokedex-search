@@ -1,11 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
-import {
-  createBrowserRouter,
-  Navigate,
-  RouterProvider,
-} from "react-router-dom";
+import { createHashRouter, Navigate, RouterProvider } from "react-router-dom";
 import { Search } from "./pages/search";
 import { ErrorPage } from "./pages/ErrorPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -13,7 +9,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "./tailwind-output.css";
 import { Detail } from "./pages/detail";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Navigate to="/pokedex-search" replace={true} />,
