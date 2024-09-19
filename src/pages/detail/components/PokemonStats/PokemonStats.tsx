@@ -13,6 +13,14 @@ import { ErrorPage } from "../../../ErrorPage";
 import SvgIcon from "../../../../components/SvgIcon/SvgIcon";
 import { toTitleCase } from "../../../../utils/toTitleCase";
 import { StatIndicator } from "./components/StatBar";
+import { PokeballLoader } from "../../../../components/PokeballLoader";
+import { ReactNode } from "react";
+
+const PokemonStatsLayout = ({ children }: { children: ReactNode }) => (
+  <div className="bg-white rounded-lg w-full h-[65%] pt-12 px-4 shadow-inner shadow-gray-300 overflow-scroll">
+    {children}
+  </div>
+);
 
 const statLabelMap: Record<string, string> = {
   hp: "HP",
@@ -47,10 +55,20 @@ export const PokemonStats = () => {
       return fetchPokemonSpeciesDetailsById(pokemonId);
     },
   });
-  if (pokemonDetailStatus || speciesStatus === "pending") {
-    <div>Loading...</div>;
-  }
-  if (!pokemon || !speciesStatus) {
+  if (speciesStatus === "pending" || pokemonDetailStatus === "pending")
+    return (
+      <PokemonStatsLayout>
+        <div className="flex justify-center items-center w-full h-full">
+          <PokeballLoader />
+        </div>
+      </PokemonStatsLayout>
+    );
+
+  if (
+    speciesStatus === "error" ||
+    pokemonDetailStatus === "error" ||
+    !pokemon
+  ) {
     return <ErrorPage />;
   }
 

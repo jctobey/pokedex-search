@@ -16,7 +16,7 @@ const router = createHashRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/pokedex-search",
+    path: "pokedex-search",
     element: <Search />,
     errorElement: <ErrorPage />,
   },
