@@ -46,7 +46,7 @@ export const fetchPokemonList = async ({
 }: {
   pageParam: unknown;
 }): Promise<PokemonListApiResponse> => {
-  const url = `https://pokeapi.co/api/v2/pokemon?limit=50&offset=${pageParam}`;
+  const url = `https://pokeapi.co/api/v2/pokemon?limit=45&offset=${pageParam}`;
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error("Network response was not ok");
