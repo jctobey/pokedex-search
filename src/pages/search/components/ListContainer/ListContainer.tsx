@@ -1,5 +1,5 @@
 import { useInfiniteQuery, useQueries } from "@tanstack/react-query";
-import { ReactNode, useCallback, useRef } from "react";
+import React, { ReactNode, useCallback, useRef } from "react";
 import { PokemonCardLink } from "../PokemonCardLink";
 import { PokemonNumber } from "../PokemonNumber";
 import { PokemonImage } from "../PokemonImage";
@@ -50,7 +50,6 @@ export const ListContainer = () => {
   });
 
   const isLoading = pokemonQueries.some((query) => query.status === "pending");
-  const isError = pokemonQueries.some((query) => query.status === "error");
 
   const observer = useRef<IntersectionObserver | null>();
   const lastPokemonElementRef = useCallback(
@@ -86,28 +85,37 @@ export const ListContainer = () => {
   }
 
   return (
-    <ListContainerLayout>
-      {pokemonQueries.map((pokemonQueryData, index) => {
-        const isLastPokemon = index + 1 === pokemonQueries.length;
-        if (pokemonQueryData.data) {
-          return (
-            <div ref={isLastPokemon ? lastPokemonElementRef : undefined}>
-              <PokemonCardLink pokemonId={pokemonQueryData.data?.id}>
-                <PokemonNumber pokemonNumber={pokemonQueryData.data?.id} />
-                <PokemonImage
-                  spriteImageUrl={
-                    pokemonQueryData.data.sprites.other.dream_world
-                      .front_default
-                  }
-                  pokemonName={pokemonQueryData.data.name}
-                />
-                <PokemonName pokemonName={pokemonQueryData.data?.name || ""} />
-              </PokemonCardLink>
-            </div>
-          );
-        }
-        return null;
-      })}
-    </ListContainerLayout>
+    <React.Fragment>
+      <ListContainerLayout>
+        {pokemonQueries.map((pokemonQueryData, index) => {
+          const isLastPokemon = index + 1 === pokemonQueries.length;
+          if (pokemonQueryData.data) {
+            return (
+              <div ref={isLastPokemon ? lastPokemonElementRef : undefined}>
+                <PokemonCardLink pokemonId={pokemonQueryData.data?.id}>
+                  <PokemonNumber pokemonNumber={pokemonQueryData.data?.id} />
+                  <PokemonImage
+                    spriteImageUrl={
+                      pokemonQueryData.data.sprites.other.dream_world
+                        .front_default
+                    }
+                    pokemonName={pokemonQueryData.data.name}
+                  />
+                  <PokemonName
+                    pokemonName={pokemonQueryData.data?.name || ""}
+                  />
+                </PokemonCardLink>
+              </div>
+            );
+          }
+          return null;
+        })}
+        {isFetchingNextPage ? (
+          <div className="col-span-full justify-self-center pt-2">
+            <PokeballLoader />
+          </div>
+        ) : null}
+      </ListContainerLayout>
+    </React.Fragment>
   );
 };
