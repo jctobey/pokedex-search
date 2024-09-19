@@ -29,15 +29,29 @@ export type PokemonType =
   | "steel"
   | "water";
 
-export const fetchPokemonList = async (
-  offset: number
-): Promise<{ name: string; url: string }[]> => {
-  const url = `https://pokeapi.co/api/v2/pokemon?limit=50&offset=${offset}`;
+type PokemonListApiResponse = {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: { name: string; url: string }[];
+};
+
+export type InfiniteQueryData = {
+  pages: PokemonListApiResponse[]; // Each page is an API response
+  pageParams: any[]; // Params used for pagination (e.g., offset, cursors)
+};
+
+export const fetchPokemonList = async ({
+  pageParam,
+}: {
+  pageParam: unknown;
+}): Promise<PokemonListApiResponse> => {
+  const url = `https://pokeapi.co/api/v2/pokemon?limit=50&offset=${pageParam}`;
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error("Network response was not ok");
   }
-  return (await response.json()).results;
+  return await response.json();
 };
 
 export const fetchPokemonById = async (id: string): Promise<Pokemon> => {

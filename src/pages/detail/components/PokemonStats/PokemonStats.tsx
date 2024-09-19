@@ -68,7 +68,7 @@ export const PokemonStats = () => {
     ? Math.floor(Math.random() * englishFlavorTextEntries.length)
     : 0;
   return (
-    <div className="bg-white rounded-lg w-full h-[65%] pt-12 px-4 shadow-inner shadow-gray-300 overflow-scroll md:h-full">
+    <div className="bg-white rounded-lg w-full h-[65%] pt-12 px-4 shadow-inner shadow-gray-300 overflow-scroll">
       <div className="flex justify-center gap-4 w-full">
         {pokemon?.types.map(({ type }) => (
           <PokeTypePill pokemonType={type.name}>
@@ -86,7 +86,7 @@ export const PokemonStats = () => {
       <div className="grid grid-cols-3 w-full text-center">
         <div className="flex justify-center items-center gap-2 border-r border-grayscale-light">
           <SvgIcon name="Weight" height={16} width={16} />
-          <span className="font-light text-xs">{`${weightKg} kg`}</span>
+          <span className="font-light text-xs md:text-lg">{`${weightKg} kg`}</span>
         </div>
         <div className="flex justify-center items-center gap-2 border-r border-grayscale-light">
           <SvgIcon
@@ -95,11 +95,11 @@ export const PokemonStats = () => {
             width={16}
             className="rotate-90"
           />
-          <span className="font-light text-xs">{`${heightMeters} m`}</span>
+          <span className="font-light text-xs md:text-lg">{`${heightMeters} m`}</span>
         </div>
-        <div className="flex justify-center flex-col text-left pl-3 gap-1">
+        <div className="flex justify-center flex-col text-left pl-3 gap-1 md:text-center">
           {firstTwoMoves.map(({ move }) => (
-            <span className="font-light text-xs">
+            <span className="font-light text-xs md:text-lg">
               {toTitleCase(move.name, "-")}
             </span>
           ))}
@@ -112,7 +112,7 @@ export const PokemonStats = () => {
         </span>
         <span className="text-xxs text-grayscale-medium pt-1">Moves</span>
       </div>
-      <p className="pt-6 pb-2 text-xs font-light">
+      <p className="pt-6 pb-2 text-xs font-light text-center md:text-lg">
         {englishFlavorTextEntries[randomEnglishFlavorText]?.flavor_text}
       </p>
       <div className="flex text-center p-2 py-3">

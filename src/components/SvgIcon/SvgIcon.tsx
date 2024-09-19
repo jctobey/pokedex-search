@@ -8,6 +8,7 @@ import {
   Search,
   Straighten,
   Weight,
+  PokeballLoading,
 } from "./icons";
 
 const icons = {
@@ -19,6 +20,7 @@ const icons = {
   Search,
   Straighten,
   Weight,
+  PokeballLoading,
 };
 
 type IconName = keyof typeof icons;

@@ -6,3 +6,4 @@ export { ReactComponent as Pokeball } from "./pokeball.svg";
 export { ReactComponent as Search } from "./search.svg";
 export { ReactComponent as Straighten } from "./straighten.svg";
 export { ReactComponent as Weight } from "./weight.svg";
+export { ReactComponent as PokeballLoading } from "./pokeball_loading.svg";

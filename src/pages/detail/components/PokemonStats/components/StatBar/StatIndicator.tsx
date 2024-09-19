@@ -18,15 +18,15 @@ export const StatIndicator = ({
     <div className="flex w-full gap-2 items-center">
       <span
         className={classNames(
-          "px-2 border-r-2 border-r-grayscale-light text-right w-14 font-semibold text-xs",
+          "px-2 border-r-2 border-r-grayscale-light text-right w-14 font-semibold text-xs md:text-lg md:w-24",
           textColorClass
         )}
       >
         {stat}
       </span>
-      <span className="text-xs w-6">{paddedStatValue}</span>
+      <span className="text-xs w-6 md:text-lg md:w-10">{paddedStatValue}</span>
       <div className="grow">
-        <div className="relative w-full h-1 bg-gray-200 rounded overflow-hidden">
+        <div className="relative w-full h-1 bg-gray-200 rounded overflow-hidden md:h-2">
           <div
             className={classNames(
               "absolute top-0 left-0 h-full rounded",

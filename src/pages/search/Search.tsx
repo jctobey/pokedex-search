@@ -3,7 +3,7 @@ import { SearchHeader } from "./components/SearchHeader";
 
 export const Search = () => {
   return (
-    <div className="p-2 h-dvh w-dvw bg-primary">
+    <div className="p-2 bg-primary h-dvh">
       <SearchHeader />
       <ListContainer />
     </div>
