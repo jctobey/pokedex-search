@@ -654,9 +654,6 @@ video {
 .gap-4 {
   gap: 1rem;
 }
-.self-center {
-  align-self: center;
-}
 .justify-self-center {
   justify-self: center;
 }
