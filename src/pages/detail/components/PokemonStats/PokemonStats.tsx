@@ -17,7 +17,7 @@ import { PokeballLoader } from "../../../../components/PokeballLoader";
 import { ReactNode } from "react";
 
 const PokemonStatsLayout = ({ children }: { children: ReactNode }) => (
-  <div className="bg-white rounded-lg w-full h-[65%] pt-12 px-4 shadow-inner shadow-gray-300 overflow-scroll">
+  <div className="bg-white rounded-lg w-full h-[65%] pt-8 px-4 shadow-inner shadow-gray-300 overflow-scroll md:pt-12">
     {children}
   </div>
 );
@@ -86,7 +86,7 @@ export const PokemonStats = () => {
     ? Math.floor(Math.random() * englishFlavorTextEntries.length)
     : 0;
   return (
-    <div className="bg-white rounded-lg w-full h-[65%] pt-12 px-4 shadow-inner shadow-gray-300 overflow-scroll">
+    <PokemonStatsLayout>
       <div className="flex justify-center gap-4 w-full">
         {pokemon?.types.map(({ type }) => (
           <PokeTypePill pokemonType={type.name}>
@@ -154,6 +154,6 @@ export const PokemonStats = () => {
           );
         })}
       </div>
-    </div>
+    </PokemonStatsLayout>
   );
 };
